@@ -1,0 +1,22 @@
+{
+  "name": "chatbox",
+  "version": "0.0.0",
+  "homepage": "https://github.com/athulnath/chatbox",
+  "authors": [
+    "athulnath <athulnath.t@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angularjs": "~1.4.4",
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.5"
+  }
+}

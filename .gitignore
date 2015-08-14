@@ -1,5 +1,7 @@
 /platforms/
 /hooks/
 /plugins/
+/node_modules/
+/www/lib/
 
 
