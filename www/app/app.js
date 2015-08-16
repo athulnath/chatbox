@@ -8,7 +8,7 @@ routerConfig.$inject = ["$routeProvider"];
 
 function routerConfig($routeProvider) {
 	$routeProvider
-		.when("/login", {
+		.when("/", {
 			templateUrl: "app/views/index.html",
 			controller: "chatController",
 			controllerAs: "vm"
