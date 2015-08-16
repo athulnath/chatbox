@@ -1,0 +1,96 @@
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-comment"></span> chatbox
+                    <div class="btn-group pull-right">
+                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                        </button>
+                        <ul class="dropdown-menu slidedown">
+                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-refresh">
+                            </span>Refresh</a></li>
+                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-ok-sign">
+                            </span>Available</a></li>
+                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-remove">
+                            </span>Busy</a></li>
+                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-time"></span>
+                                Away</a></li>
+                            <li class="divider"></li>
+                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-off"></span>
+                                Sign Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <ul class="chat">
+
+                        <div ng-repeat="msg in vm.messageArray">
+                        <li ng-class="{'left clearfix': msg.uMsg, 'right clearfix': !msg.uMsg}">
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <small ng-class="{'pull-right text-muted': msg.uMsg, 'pull-left text-muted': !msg.uMsg}">
+                                        <span class="glyphicon glyphicon-time"></span>12 mins ago
+                                    </small>
+                                </dividerv>
+                                <p ng-class="{'pull-left': msg.uMsg, 'pull-right': !msg.uMsg}">{{msg.name}}</p>
+                            </div>
+                        </li>
+                        </div>
+                    </ul>
+                </div>
+                <div class="panel-footer">
+                    <div class="input-group">
+                        <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." ng-model="vm.message"/>
+                        <span class="input-group-btn">
+                            <button class="btn btn-success btn-sm" id="btn-chat" ng-click="vm.sendMessage()">Send</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+                <div class="panel-body">
+                    <ul class="chat">
+
+                        <div ng-repeat="msg in vm.messageArray">
+                        <li ng-class="{'left clearfix': msg.uMsg, 'right clearfix': !msg.uMsg}"><span  ng-class="{'chat-img pull-left': msg.uMsg, 'chat-img pull-right': !msg.uMsg}">
+                            <img src="./img/U.png" alt="User Avatar" class="img-circle" />
+                        </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <strong ng-class="{'primary-font': msg.uMsg, 'pull-right primary-font': !msg.uMsg}">Jack Sparrow</strong> <small ng-class="{'pull-right text-muted': msg.uMsg, 'pull-left text-mutedt': !msg.uMsg}">
+                                        <span class="glyphicon glyphicon-time"></span>12 mins ago</small>
+                                </div>
+                                <p>{{msg.name}}</p>
+                            </div>
+                        </li>
+                        </div>
+
+                        <li class="right clearfix"><span class="chat-img pull-right">
+                            <img src="./img/ME.png" alt="User Avatar" class="img-circle" />
+                        </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>13 mins ago</small>
+                                    <strong class="pull-right primary-font">Bhaumik Patel</strong>
+                                </div>
+                                <p class="pull-right">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+                                    dolor, quis ullamcorper ligula sodales.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+-->            
