@@ -10,7 +10,13 @@ function chatController($scope, config) {
 	var vm = this;
 	var socket;
 	vm.message = "";
-	vm.messageArray = [{name:"adfafasf", uMsg: true}, {name:"adsfasdf", uMsg: false}];
+	vm.messageArray = [{name:"adfafasf", uMsg: true}, {name:"adsfasdf", uMsg: false}, 
+	{name:"adsfasdf", uMsg: false}, {name:"adsfasdf", uMsg: false}, {name:"adsfasdf", uMsg: false}, 
+	{name:"adfafasf", uMsg: true}, {name:"adsfasdf", uMsg: false}, {name:"adsfasdf", uMsg: false}, 
+	{name:"adsfasdf", uMsg: false}, {name:"adsfasdf", uMsg: false}, {name:"adfafasf", uMsg: true}, 
+	{name:"adsfasdf", uMsg: false}, {name:"adsfasdf", uMsg: false}, {name:"adsfasdf", uMsg: false}, 
+	{name:"adsfasdf", uMsg: false}];
+	
 	vm.sendMessage = sendMessage;
 
 	activate();

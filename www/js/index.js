@@ -1,5 +1,13 @@
-  var socket = io('http://192.168.0.10:8080');
-  socket.on('news', function (data) {
-    console.log(data);
-    socket.emit('my other event', { my: 'data' });
-  });
+// $('#content').animate({
+//     scrollTop: $('.chats li:last-child').position().top + 'px'
+// }, 1000);
+
+
+// $(document).ready(function(){
+//     var p = $("li:last-child" );
+//     var offset = p.offset();
+//     console.log(offset);
+//     //  $('#content').animate({
+//     //     scrollTop: $(".chats li:last-child").offset();
+//     // }, 2000);
+// });

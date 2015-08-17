@@ -1,98 +1,46 @@
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <span class="glyphicon glyphicon-comment"></span> chatbox
-                    <div class="btn-group pull-right">
-                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
-                            <span class="glyphicon glyphicon-chevron-down"></span>
-                        </button>
-                        <ul class="dropdown-menu slidedown">
-                            <li><a href="#"><span class="glyphicon glyphicon-refresh">
-                            </span>Refresh</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-ok-sign">
-                            </span>Available</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-remove">
-                            </span>Busy</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-time"></span>
-                                Away</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-off"></span>
-                                Sign Out</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="panel-body">
-                    <ul class="chat">
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">chatbox</a>
+    </div>
+  </div>
+</div>
 
-                        <div ng-repeat="msg in vm.messageArray">
-                        <li ng-class="{'left clearfix': msg.uMsg, 'right clearfix': !msg.uMsg}">
-                            <div class="chat-body clearfix">
-                                <div class="header">
-                                    <small ng-class="{'pull-right text-muted': msg.uMsg, 'pull-left text-muted': !msg.uMsg}">
-                                        <span class="glyphicon glyphicon-time"></span>12 mins ago
-                                    </small>
-                                </dividerv>
-                                <p ng-class="{'pull-left': msg.uMsg, 'pull-right': !msg.uMsg}">{{msg.name}}</p>
-                            </div>
-                        </li>
-                        </div>
-                    </ul>
-                </div>
-                <div class="panel-footer">
-                    <form ng-submit="vm.sendMessage()">
+
+<div id="content">
+  <div class="row">
+       <ul class="chat">
+            <div ng-repeat="msg in vm.messageArray">
+            <li class="clearfix" scroll><a href="#"><span class="chat-img pull-left">
+                    <img src="./img/U.png" class="img-circle" height="40" width="40"/>
+            </span>
+              <div class="chat-body clearfix">
+                  <div class="header">
+                    <strong class="primary-font"></strong> <small class="pull-right text-muted"><span class="glyphicon glyphicon-time"></span> 10:10 AM</small>
+                  </div>
+                  <p> 
+                    {{msg.name}}
+                  </p>
+              </div>
+            </a>
+            </li>
+            </div>
+
+             </div>               
+        </ul>
+  </div>
+</div>    
+
+<div class="navbar navbar-default navbar-fixed-bottom">
+      <div class="container">
+        <div class="row send-box">
+            <form ng-submit="vm.sendMessage()">
                     <div class="input-group">
                         <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." ng-model="vm.message"/>
                         <span class="input-group-btn">
-                            <input type="submit" class="btn btn-success btn-sm" id="btn-chat" value="Send"/>
+                            <input type="submit" class="btn btn-success btn-md" id="btn-chat" value="Send"/>
                         </span>
                     </div>
-                </form>
-                </div>
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-<!-- 
-
-                <div class="panel-body">
-                    <ul class="chat">
-
-                        <div ng-repeat="msg in vm.messageArray">
-                        <li ng-class="{'left clearfix': msg.uMsg, 'right clearfix': !msg.uMsg}"><span  ng-class="{'chat-img pull-left': msg.uMsg, 'chat-img pull-right': !msg.uMsg}">
-                            <img src="./img/U.png" alt="User Avatar" class="img-circle" />
-                        </span>
-                            <div class="chat-body clearfix">
-                                <div class="header">
-                                    <strong ng-class="{'primary-font': msg.uMsg, 'pull-right primary-font': !msg.uMsg}">Jack Sparrow</strong> <small ng-class="{'pull-right text-muted': msg.uMsg, 'pull-left text-mutedt': !msg.uMsg}">
-                                        <span class="glyphicon glyphicon-time"></span>12 mins ago</small>
-                                </div>
-                                <p>{{msg.name}}</p>
-                            </div>
-                        </li>
-                        </div>
-
-                        <li class="right clearfix"><span class="chat-img pull-right">
-                            <img src="./img/ME.png" alt="User Avatar" class="img-circle" />
-                        </span>
-                            <div class="chat-body clearfix">
-                                <div class="header">
-                                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>13 mins ago</small>
-                                    <strong class="pull-right primary-font">Bhaumik Patel</strong>
-                                </div>
-                                <p class="pull-right">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                                    dolor, quis ullamcorper ligula sodales.
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
--->            
+            </form> 
+        </div>
+      </div>
