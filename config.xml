@@ -19,6 +19,8 @@
 
     <platform name="android">
         <preference name="SplashScreen" value="screen" />
+        <preference name="DisallowOverscroll" value="false"/>
+        <preference name="fullscreen" value="false" />
         <allow-intent href="market:*" />
             <splash src="res/screen/android/chat_box.png" density="port-hdpi"/>
             <splash src="res/screen/android/chat_box.png" density="port-ldpi"/>

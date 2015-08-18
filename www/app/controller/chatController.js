@@ -36,6 +36,7 @@ function chatController($scope, config) {
 		vm.messageArray.push({name: vm.message, uMsg: false});
 		socket.emit('chat', "athulnath", { message: vm.message});
 		vm.message = "";
+		$("#btn-input").focus();
 	}
 
 }		
