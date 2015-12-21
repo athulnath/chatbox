@@ -7,6 +7,7 @@ chatController.$inject = ["$scope", "config"];
 ////
 
 function chatController($scope, config) {
+	
 	var vm = this;
 	var socket;
 	vm.message = "";

@@ -1,18 +1,22 @@
-var app = require('express')();
+var express  = require('express');
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
+var app = express();
 var users = {};
 var sockets = {};
 
-server.listen(8080, function() {
-	console.log("chatbox runnning at 8080");
+app.use(express.static("www"));
+
+app.listen(8080, function() {
+  console.log("chatbox started on 8080!!!");
 });
 
+/*
 app.get('/', function (req, res) {
   res.send("OK");
-});
 
+});
 io.on('connection', function (socket) {
 
   socket.on('init', function(username) {
@@ -30,4 +34,4 @@ io.on('connection', function (socket) {
   	console.log("user disconnected");
   });
 
-});
+});*/

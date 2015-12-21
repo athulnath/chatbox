@@ -13,6 +13,6 @@ function routerConfig($routeProvider) {
 			controller: "chatController",
 			controllerAs: "vm"
 		});
-}	
+}
 
 })();
