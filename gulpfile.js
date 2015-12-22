@@ -7,7 +7,7 @@ var nodemon = require("gulp-nodemon");
 var sourcemaps = require("gulp-sourcemaps");
 
 
-var jsSourcepath = ["www/app/**/*.js"];
+var jsSourcepath = ["client/**/*.js"];
 
 gulp.task('start', function () {
   nodemon({ script: 'server/server.js',ext: 'js'})

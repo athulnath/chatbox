@@ -1,0 +1,46 @@
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">chatbox</a>
+    </div>
+  </div>
+</div>
+
+
+<div id="content">
+  <div class="row">
+       <ul class="chat">
+            <div ng-repeat="msg in vm.messageArray">
+            <li class="clearfix" scroll><a href="#"><span class="chat-img pull-left">
+                    <img src="./img/U.png" class="img-circle" height="40" width="40"/>
+            </span>
+              <div class="chat-body clearfix">
+                  <div class="header">
+                    <strong class="primary-font"></strong> <small class="pull-right text-muted"><span class="glyphicon glyphicon-time"></span> 10:10 AM</small>
+                  </div>
+                  <p> 
+                    {{msg.name}}
+                  </p>
+              </div>
+            </a>
+            </li>
+            </div>
+
+             </div>               
+        </ul>
+  </div>
+</div>    
+
+<div class="navbar navbar-default navbar-fixed-bottom">
+      <div class="container">
+        <div class="row send-box">
+            <form ng-submit="vm.sendMessage()">
+                    <div class="input-group">
+                        <input id="btn-input" type="text" class="form-control input-lg" placeholder="Type your message here..." ng-model="vm.message" autocomplete="off"/>
+                        <span class="input-group-btn">
+                            <input type="submit" class="btn btn-success btn-lg" id="btn-chat" value=">>"/>
+                        </span>
+                    </div>
+            </form> 
+        </div>
+      </div>
