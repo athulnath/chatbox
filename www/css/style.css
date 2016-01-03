@@ -62,6 +62,10 @@ html,body{
 
 .navbar {
     margin-bottom: 0px;
-}    
+} 
+
+.panel-font {
+    color: #555;
+}   
 
 

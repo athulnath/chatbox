@@ -11,6 +11,7 @@
 
         <script src="./lib/angularjs/angular.min.js"></script>
         <script src="./lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="./lib/angular-resource/angular-resource.min.js"></script>
         <script src="./lib/socket.io-client/socket.io.js"></script>
 
         <script src="js/app.min.js"></script>
@@ -38,7 +39,7 @@ function onDeviceReady() {
 <body>
 
 
-<div class="site-wrapper">
+<div class="site-wrapper" ng-controller="MainController as main">
 
       <div class="site-wrapper-inner">
 
@@ -49,7 +50,8 @@ function onDeviceReady() {
               <h3 class="masthead-brand">chatBox</h3>
               <nav>
                 <ul class="nav masthead-nav">
-                  <li ui-sref-active="active"><a ui-sref="login">Login</a></li>
+                  <li ng-if="!user" ui-sref-active="active"><a ui-sref="login">Login</a></li>
+                  <li ng-if="user" ui-sref-active="active"><a ng-click="main.logout()">Logout</a></li>
                 </ul>
               </nav>
             </div>

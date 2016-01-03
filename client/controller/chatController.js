@@ -3,12 +3,13 @@
 		.module('chatbox')
 		.controller('chatController', chatController);
 
-chatController.$inject = ["$scope", "config"];		
+chatController.$inject = ["$scope", "config"];
 ////
 
 function chatController($scope, config) {
 	
 	var vm = this;
+	vm.user = {data: "adfs"};
 	var socket;
 	vm.message = "";
 	vm.messageArray = [{name:"adfafasf", uMsg: true}, {name:"adsfasdf", uMsg: false}, 

@@ -1,16 +1,51 @@
-var express  = require('express');
+var express  = require('express'),
+    bodyParser = require("body-parser"),
+    passport = require("passport"),
+    cookieParser = require("cookie-parser"),
+    session = require("express-session");
+
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
+var MongoConnector = require("./dbFactory/mongodb/mongoConnector.js");
+MongoConnector.initDb();
 
 var app = express();
 var users = {};
 var sockets = {};
 
+//app basic settings
 app.use(express.static("www"));
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+app.use(cookieParser());
 
-app.listen(8080, function() {
+
+//express/mongo session storage
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true
+}));
+
+
+require('./config/passport')(passport);
+
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+
+//require other modules
+app.use(require('./controllers'));
+
+//init server
+app.listen(8080, "", function() {
   console.log("chatbox started on 8080!!!");
 });
+
+
+
+
+
+
 
 /*
 app.get('/', function (req, res) {
@@ -31,7 +66,7 @@ io.on('connection', function (socket) {
   });
 
   socket.on("disconnect", function() {
-  	console.log("user disconnected");
+    console.log("user disconnected");
   });
 
 });*/
